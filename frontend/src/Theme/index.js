@@ -3,9 +3,10 @@ export const colors = {
     black: ['#171E27', '#283444', '#3C4857'], // Darkest to lightest
     frost: ['#F9FAFC', '#F0F2F7', '#E5E9F2'],
     white: '#fff',
+    offwhite: '#fcfcfc',
     text: '#024',
     navy: '#4669F6',
-    blue: ['#058', '#00b2ff', '#f5f7ff'],
+    blue: ['#03A9F4', '#00b2ff', '#f5f7ff'],
     gray: ['#8392A6', '#D3DCE7', '#C0CCDA', '#F1F5F7'],
     darken: 'rgba(0, 0, 0, 0.25)',
     violet: '#8700ee',
@@ -27,7 +28,7 @@ const theme = {
         sans: 'system-ui, sans-serif',
         mono: 'Menlo, monospace'
     },
-    fontSizes: [11, 13, 15, 16, 21, 24, 27],
+    fontSizes: [11, 13, 15, 16, 21, 24, 27, 36, 48, 52],
     fontWeights: {
         normal: 400,
         medium: 500,
@@ -76,15 +77,15 @@ export const padding = {
 
 export const fontSize = {
     // maps to fontSizes array
-    titleL: 6, // 27px
-    titleM: 5, // 24px
-    titleS: 4, // 21px
-    heading: 3, // 17px
-    subHeading: 1, // 13px
-    body: 2, // 15px
-    chat: 2, // 15px
-    caption: 1, // 13px
-    tiny: 0 // 11px
+    titleL: 8,
+    titleM: 7,
+    titleS: 6,
+    heading: 5,
+    subHeading: 1,
+    body: 2,
+    chat: 2,
+    caption: 1,
+    tiny: 0
 }
 
 export default theme
