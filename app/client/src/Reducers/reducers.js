@@ -2,7 +2,7 @@
 import type { Action } from '../Types'
 import type { Variable, HasErrored, IsLoading, SummaryData } from '../Types/summary'
 
-export function updateVariable(state: Variable = '', action: Action) {
+export function variable(state: Variable = '', action: Action) {
     switch (action.type) {
         case 'UPDATE_VARIABLE':
             return action.variable

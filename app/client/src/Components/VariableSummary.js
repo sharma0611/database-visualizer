@@ -28,11 +28,12 @@ class VariableSummary extends Component<Props> {
                     Summary
                 </Heading>
                 <Scroller>
-                    {omitted && omitted > 0 && (
+                    {!!omitted && omitted > 0 && (
                         <Text textAlign="right" p={padding.medium}>
                             {omitted} lines ommitted.
                         </Text>
                     )}
+
                     {readableVariable && rows && rows.length > 0 && (
                         <Box mx={5} my={4}>
                             <SummaryTable {...{ rows, readableVariable, hasErrored, isLoading }} />
