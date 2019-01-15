@@ -6,8 +6,10 @@ The following app allows you to select a census variable and view a table of uni
 
 Node + Express is used to serve the app. React, Rebass, + Styled Components powers the front end UI. Redux + Thunk is used for state management and asynchronous side effects. 
 
+The root directory contains a Node app that serves both the front end client from `client/` & back end api in `server.js`. I investigated what the data looks like in `Data Peek.ipynb`. 
+
 ## Setup
-The root directory contains a Node app that serves both the front end client & back end api. Run the following commands in the root directory to get a version running locally.
+Run the following commands in the root directory to get a version running locally.
 
 **1) Setup environment variables**
 
@@ -23,7 +25,7 @@ The database visualizer should now be live at `localhost:3000` 🚀
 
 ## Testing
  
-Run `yarn test` to run tests 
+Run `cd client && yarn test` to run tests. Currently, tests are around whether App renders correctly and snapshot tests around the `SummaryTable` component. Ideally, we should also have tests for the backend api that serves us data for a given variable. 
 
 ## Deployment
 
@@ -36,6 +38,3 @@ $ heroku create
 $ heroku git:remote -a your-remote-app-uri
 $ git push heroku master
 ```
-
-
-
