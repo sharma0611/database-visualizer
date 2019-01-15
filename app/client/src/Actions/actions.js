@@ -1,5 +1,12 @@
+import type {
+    UpdateVariableAction,
+    HasErroredAction,
+    IsLoadingAction,
+    FetchSuccessAction
+} from '../Types'
+
 // update action
-export function updateVariable(variable) {
+export function updateVariable(variable): UpdateVariableAction {
     return {
         type: 'UPDATE_VARIABLE',
         variable
@@ -7,7 +14,7 @@ export function updateVariable(variable) {
 }
 
 // error action
-export function summaryError(bool) {
+export function summaryError(bool): HasErroredAction {
     return {
         type: 'HAS_ERRORED',
         hasErrored: bool
@@ -15,7 +22,7 @@ export function summaryError(bool) {
 }
 
 // loading action
-export function summaryIsLoading(bool) {
+export function summaryIsLoading(bool): IsLoadingAction {
     return {
         type: 'IS_LOADING',
         isLoading: bool
@@ -23,7 +30,7 @@ export function summaryIsLoading(bool) {
 }
 
 // success action
-export function summaryFetchSuccess(summaryData) {
+export function summaryFetchSuccess(summaryData): FetchSuccessAction {
     return {
         type: 'FETCH_SUCCESS',
         summaryData

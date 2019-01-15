@@ -7,14 +7,17 @@ import * as serviceWorker from './serviceWorker'
 import { Provider } from 'react-redux'
 import configureStore from './Store'
 
-const initialState = {
+// types
+import type { Store, State } from './types'
+
+const initialState: State = {
     variable: '',
     hasErrored: false,
     isLoading: false,
-    summaryData: {}
+    summaryData: null
 }
 
-const store = configureStore(initialState)
+const store: Store = configureStore(initialState)
 
 ReactDOM.render(
     <Provider store={store}>
