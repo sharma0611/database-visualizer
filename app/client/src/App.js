@@ -1,6 +1,5 @@
 // @flow
 import React, { Component } from 'react'
-import './App.css'
 import { ThemeProvider } from 'styled-components'
 import { connect } from 'react-redux'
 
@@ -9,7 +8,21 @@ import DataVisualizer from './Components/DataVisualizer'
 import Theme from './Theme'
 import { fetchSummaryData } from './Actions/thunks'
 
-class App extends Component {
+// types
+import type { State, DispatchWithThunk } from './Types'
+import type { Variable, HasErrored, IsLoading, SummaryData } from './Types/summary'
+
+export type UpdateVariableType = (variable: Variable) => void
+
+type Props = {
+    variable: Variable,
+    hasErrored: HasErrored,
+    isLoading: IsLoading,
+    summaryData: SummaryData,
+    updateVariable: UpdateVariableType
+}
+
+class App extends Component<Props> {
     render() {
         const { variable, hasErrored, isLoading, summaryData, updateVariable } = this.props
         return (
@@ -22,7 +35,7 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: State): State => {
     return {
         variable: state.variable,
         hasErrored: state.hasErrored,
@@ -31,9 +44,11 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (
+    dispatch: DispatchWithThunk
+): { updateVariable: UpdateVariableType } => {
     return {
-        updateVariable: variable => dispatch(fetchSummaryData(variable))
+        updateVariable: (variable: Variable) => dispatch(fetchSummaryData(variable))
     }
 }
 

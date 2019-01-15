@@ -11,4 +11,12 @@ export type Action = ReduxInitAction | SummaryAction
 
 export type Store = ReduxStore<State, Action>
 
-export type Dispatch = ReduxDispatch<Action>
+export type RawDispatch = ReduxDispatch<Action>
+
+type GetState = () => State
+type PromiseAction = Promise<Action>
+export type ThunkAction = (dispatch: RawDispatch, getState: GetState) => any
+
+export type DispatchWithThunk = (
+    action: Action | ThunkAction | PromiseAction | Array<Action>
+) => any

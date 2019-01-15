@@ -11,7 +11,17 @@ import { Box, Heading } from 'rebass'
 import LoadingSpinner from './LoadingSpinner'
 import Error from './Error'
 
-const SummaryTable = props => {
+// types
+import type { SummaryRow, IsLoading, HasErrored } from '../Types/summary'
+
+type Props = {
+    readableVariable: string,
+    rows: Array<SummaryRow>,
+    isLoading: IsLoading,
+    hasErrored: HasErrored
+}
+
+const SummaryTable = (props: Props) => {
     const { readableVariable: variable, rows, isLoading, hasErrored } = props
     if (!variable) {
         return (

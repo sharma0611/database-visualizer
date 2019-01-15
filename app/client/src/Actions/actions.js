@@ -1,12 +1,17 @@
+//@flow
 import type {
     UpdateVariableAction,
     HasErroredAction,
     IsLoadingAction,
-    FetchSuccessAction
-} from '../Types'
+    FetchSuccessAction,
+    Variable,
+    HasErrored,
+    IsLoading,
+    SummaryData
+} from '../Types/summary'
 
 // update action
-export function updateVariable(variable): UpdateVariableAction {
+export function updateVariableAction(variable: Variable): UpdateVariableAction {
     return {
         type: 'UPDATE_VARIABLE',
         variable
@@ -14,7 +19,7 @@ export function updateVariable(variable): UpdateVariableAction {
 }
 
 // error action
-export function summaryError(bool): HasErroredAction {
+export function hasErroredAction(bool: HasErrored): HasErroredAction {
     return {
         type: 'HAS_ERRORED',
         hasErrored: bool
@@ -22,7 +27,7 @@ export function summaryError(bool): HasErroredAction {
 }
 
 // loading action
-export function summaryIsLoading(bool): IsLoadingAction {
+export function isLoadingAction(bool: IsLoading): IsLoadingAction {
     return {
         type: 'IS_LOADING',
         isLoading: bool
@@ -30,7 +35,7 @@ export function summaryIsLoading(bool): IsLoadingAction {
 }
 
 // success action
-export function summaryFetchSuccess(summaryData): FetchSuccessAction {
+export function fetchSuccessAction(summaryData: SummaryData): FetchSuccessAction {
     return {
         type: 'FETCH_SUCCESS',
         summaryData

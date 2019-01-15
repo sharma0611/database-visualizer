@@ -7,7 +7,17 @@ import Scroller from './Scroller'
 import Page from './Page'
 import { colNameToHumanFriendly } from '../Config/columnData'
 
-class VariableSummary extends Component {
+//types
+import type { Variable, IsLoading, HasErrored, SummaryData } from '../Types/summary'
+
+type Props = {
+    variable: Variable,
+    summaryData: SummaryData,
+    isLoading: IsLoading,
+    hasErrored: HasErrored
+}
+
+class VariableSummary extends Component<Props> {
     render() {
         const { summaryData, variable, hasErrored, isLoading } = this.props
         const { data: rows, omitted } = summaryData
@@ -18,14 +28,16 @@ class VariableSummary extends Component {
                     Summary
                 </Heading>
                 <Scroller>
-                    {omitted > 0 && (
+                    {omitted && omitted > 0 && (
                         <Text textAlign="right" p={padding.medium}>
                             {omitted} lines ommitted.
                         </Text>
                     )}
-                    <Box mx={5} my={4}>
-                        <SummaryTable {...{ rows, readableVariable, hasErrored, isLoading }} />
-                    </Box>
+                    {readableVariable && rows && rows.length > 0 && (
+                        <Box mx={5} my={4}>
+                            <SummaryTable {...{ rows, readableVariable, hasErrored, isLoading }} />
+                        </Box>
+                    )}
                 </Scroller>
             </Page>
         )

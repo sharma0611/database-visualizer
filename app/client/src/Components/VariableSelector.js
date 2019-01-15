@@ -1,14 +1,22 @@
 // @flow
 import React, { Component } from 'react'
-import { Flex, Box, Card, Text, Heading } from 'rebass'
-import styled from 'styled-components'
+import { Card, Text, Heading } from 'rebass'
 import { padding } from '../Theme'
 import columnData from '../Config/columnData'
 import Scroller from './Scroller'
 import Page from './Page'
 
-class VariableSelector extends Component {
-    handlePress = variable => {
+//types
+import type { Variable } from '../Types/summary'
+import type { UpdateVariableType } from '../App'
+
+type Props = {
+    variable: Variable,
+    updateVariable: UpdateVariableType
+}
+
+class VariableSelector extends Component<Props> {
+    handlePress = (variable: string) => {
         this.props.updateVariable(variable)
     }
 

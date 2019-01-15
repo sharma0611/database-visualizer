@@ -1,14 +1,22 @@
 // @flow
 import React, { Component } from 'react'
-import { Flex, Box, Heading } from 'rebass'
-import styled from 'styled-components'
-import { padding } from '../Theme'
+import { Flex, Box } from 'rebass'
 
 // components
 import VariableSelector from './VariableSelector'
 import VariableSummary from './VariableSummary'
+import type { Variable, HasErrored, IsLoading, SummaryData } from '../Types/summary'
+import type { UpdateVariableType } from '../App'
 
-class DataVisualizer extends Component {
+type Props = {
+    variable: Variable,
+    hasErrored: HasErrored,
+    isLoading: IsLoading,
+    summaryData: SummaryData,
+    updateVariable: UpdateVariableType
+}
+
+class DataVisualizer extends Component<Props> {
     render() {
         const { variable, updateVariable, summaryData, hasErrored, isLoading } = this.props
         return (

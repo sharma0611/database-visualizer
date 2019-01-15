@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import { variable, hasErrored, isLoading, summaryData } from './reducers'
+import { updateVariable, hasErrored, isLoading, summaryData } from './reducers'
 
 export default combineReducers({
-    variable,
+    updateVariable,
     hasErrored,
     isLoading,
     summaryData

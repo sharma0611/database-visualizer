@@ -1,4 +1,8 @@
-export function variable(state = '', action) {
+//@flow
+import type { Action } from '../Types'
+import type { Variable, HasErrored, IsLoading, SummaryData } from '../Types/summary'
+
+export function updateVariable(state: Variable = '', action: Action) {
     switch (action.type) {
         case 'UPDATE_VARIABLE':
             return action.variable
@@ -7,7 +11,7 @@ export function variable(state = '', action) {
     }
 }
 
-export function hasErrored(state = false, action) {
+export function hasErrored(state: HasErrored = false, action: Action) {
     switch (action.type) {
         case 'HAS_ERRORED':
             return action.hasErrored
@@ -16,7 +20,7 @@ export function hasErrored(state = false, action) {
     }
 }
 
-export function isLoading(state = false, action) {
+export function isLoading(state: IsLoading = false, action: Action) {
     switch (action.type) {
         case 'IS_LOADING':
             return action.isLoading
@@ -25,7 +29,7 @@ export function isLoading(state = false, action) {
     }
 }
 
-export function summaryData(state = [], action) {
+export function summaryData(state: SummaryData = {}, action: Action) {
     switch (action.type) {
         case 'FETCH_SUCCESS':
             return action.summaryData

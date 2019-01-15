@@ -1,4 +1,5 @@
 //@flow
+import type { Variable } from '../Types/summary'
 
 const columnData = [
     { colName: 'age', readableName: 'Age' },
@@ -51,7 +52,7 @@ const columnData = [
     { colName: 'salary range', readableName: 'Salary Range' }
 ]
 
-export const colNameToHumanFriendly = variable => {
+export const colNameToHumanFriendly = (variable: Variable): ?string => {
     const column = columnData.find(obj => obj.colName === variable)
     if (column) {
         return column.readableName
