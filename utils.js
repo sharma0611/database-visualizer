@@ -1,5 +1,3 @@
-//@flow
-
 // Get the summary statistics we need from a given db connection & variable name
 const getSummary = (variable, conn) => {
     return new Promise(function(resolve, reject) {
