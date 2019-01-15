@@ -11,7 +11,7 @@ import configureStore from './Store'
 // types
 import type { Store, State } from './types'
 
-const initialState: State = {
+export const initialState: State = {
     variable: '',
     hasErrored: false,
     isLoading: false,

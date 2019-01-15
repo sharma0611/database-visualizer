@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly for a variable 1`] = `
+<div
+  className="MuiPaper-root-1 MuiPaper-elevation2-5 MuiPaper-rounded-2"
+>
+  <table
+    className="MuiTable-root-28"
+  >
+    <thead
+      className="MuiTableHead-root-29"
+    >
+      <tr
+        className="MuiTableRow-root-30 MuiTableRow-head-33"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-head-36"
+          scope="col"
+        >
+          education
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-head-36 MuiTableCell-alignRight-45"
+          scope="col"
+        >
+          Count
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-head-36 MuiTableCell-alignRight-45"
+          scope="col"
+        >
+          Average Age
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root-47"
+    >
+      <tr
+        className="MuiTableRow-root-30"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37"
+          scope="row"
+        >
+          high school
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-alignRight-45"
+        >
+          10
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-alignRight-45"
+        />
+      </tr>
+      <tr
+        className="MuiTableRow-root-30"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37"
+          scope="row"
+        >
+          college
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-alignRight-45"
+        >
+          70
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root-35 MuiTableCell-body-37 MuiTableCell-alignRight-45"
+        />
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`renders correctly for error state 1`] = `
+<div
+  className="sc-bdVaJa iHZvIS"
+>
+  <h2
+    className="sc-bdVaJa sc-htpNat sc-bxivhb jUvXyu"
+    color="blue.1"
+    fontSize={
+      Array [
+        6,
+      ]
+    }
+    fontWeight="bold"
+  >
+    An error has been encountered. Please try again.
+  </h2>
+</div>
+`;
+
+exports[`renders correctly for loading state 1`] = `
+<div
+  className="sc-bdVaJa iHZvIS"
+>
+  <div
+    className="sc-htoDjs hpxSNI"
+  >
+    <div
+      class="spinner"
+    >
+      <div
+        class="rect rect1"
+      />
+      <div
+        class="rect rect2"
+      />
+      <div
+        class="rect rect3"
+      />
+      <div
+        class="rect rect4"
+      />
+      <div
+        class="rect rect5"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly for no variable 1`] = `
+<div
+  className="sc-bdVaJa iHZvIS"
+>
+  <h2
+    className="sc-bdVaJa sc-htpNat sc-bxivhb jUvXyu"
+    color="blue.1"
+    fontSize={
+      Array [
+        6,
+      ]
+    }
+    fontWeight="bold"
+  >
+    No Variable Selected
+  </h2>
+</div>
+`;
