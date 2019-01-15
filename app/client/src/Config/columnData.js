@@ -51,4 +51,13 @@ const columnData = [
     { colName: 'salary range', readableName: 'Salary Range' }
 ]
 
+export const colNameToHumanFriendly = variable => {
+    const column = columnData.find(obj => obj.colName === variable)
+    if (column) {
+        return column.readableName
+    } else {
+        return null
+    }
+}
+
 export default columnData

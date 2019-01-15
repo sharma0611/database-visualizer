@@ -4,16 +4,8 @@ import { Flex, Box, Card, Text, Heading } from 'rebass'
 import styled from 'styled-components'
 import { padding } from '../Theme'
 import columnData from '../Config/columnData'
-
-const Scroller = styled(Box)`
-    flex-grow: 1;
-    overflow: auto;
-`
-
-const Page = styled(Flex)`
-    height: 100vh;
-    overflow: hidden !important;
-`
+import Scroller from './Scroller'
+import Page from './Page'
 
 class VariableSelector extends Component {
     handlePress = variable => {
@@ -22,7 +14,7 @@ class VariableSelector extends Component {
 
     render() {
         return (
-            <Page flexDirection="column">
+            <Page>
                 <Heading fontSize={[6]} textAlign="center" p={padding.large} color="blue.1">
                     Pick a variable
                 </Heading>

@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react'
+import React from 'react'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -8,11 +8,10 @@ import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import { padding } from '../Theme'
 import { Box, Heading } from 'rebass'
-import { hasErrored } from '../Reducers/reducers'
 import LoadingSpinner from './LoadingSpinner'
 
 const SummaryTable = props => {
-    const { variable, rows, isLoading, hasErrored } = props
+    const { readableVariable: variable, rows, isLoading, hasErrored } = props
     if (!variable) {
         return (
             <Box>
@@ -25,9 +24,7 @@ const SummaryTable = props => {
     if (isLoading) {
         return (
             <Box>
-                <Heading fontSize={[6]} textAlign="center" p={padding.large} color="blue.1">
-                    Loading...
-                </Heading>
+                <LoadingSpinner />
             </Box>
         )
     }

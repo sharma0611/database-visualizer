@@ -1,56 +1,85 @@
 // @flow
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { colors } from '../Theme'
 
-const LoadingSpinner = styled.div`
+const Wrapper = styled.div`
     .spinner {
-        width: 40px;
-        height: 40px;
-
-        position: relative;
         margin: 100px auto;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        font-size: 10px;
     }
 
-    .double-bounce1,
-    .double-bounce2 {
-        width: 100%;
+    .spinner > div {
+        background-color: ${colors.blue[1]};
         height: 100%;
-        border-radius: 50%;
-        background-color: #333;
-        opacity: 0.6;
-        position: absolute;
-        top: 0;
-        left: 0;
+        width: 6px;
+        display: inline-block;
 
-        -webkit-animation: sk-bounce 2s infinite ease-in-out;
-        animation: sk-bounce 2s infinite ease-in-out;
+        -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+        animation: sk-stretchdelay 1.2s infinite ease-in-out;
     }
 
-    .double-bounce2 {
+    .spinner .rect2 {
+        -webkit-animation-delay: -1.1s;
+        animation-delay: -1.1s;
+        margin: 1px;
+    }
+
+    .spinner .rect3 {
         -webkit-animation-delay: -1s;
         animation-delay: -1s;
+        margin: 1px;
     }
 
-    @-webkit-keyframes sk-bounce {
+    .spinner .rect4 {
+        -webkit-animation-delay: -0.9s;
+        animation-delay: -0.9s;
+        margin: 1px;
+    }
+
+    .spinner .rect5 {
+        -webkit-animation-delay: -0.8s;
+        animation-delay: -0.8s;
+        margin: 1px;
+    }
+
+    @-webkit-keyframes sk-stretchdelay {
         0%,
+        40%,
         100% {
-            -webkit-transform: scale(0);
+            -webkit-transform: scaleY(0.4);
         }
-        50% {
-            -webkit-transform: scale(1);
+        20% {
+            -webkit-transform: scaleY(1);
         }
     }
 
-    @keyframes sk-bounce {
+    @keyframes sk-stretchdelay {
         0%,
+        40%,
         100% {
-            transform: scale(0);
-            -webkit-transform: scale(0);
+            transform: scaleY(0.4);
+            -webkit-transform: scaleY(0.4);
         }
-        50% {
-            transform: scale(1);
-            -webkit-transform: scale(1);
+        20% {
+            transform: scaleY(1);
+            -webkit-transform: scaleY(1);
         }
     }
 `
+const LoadingSpinner = () => (
+    <Wrapper>
+        <div class="spinner">
+            <div class="rect1" />
+            <div class="rect2" />
+            <div class="rect3" />
+            <div class="rect4" />
+            <div class="rect5" />
+        </div>
+    </Wrapper>
+)
+
 export default LoadingSpinner
