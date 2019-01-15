@@ -24,7 +24,6 @@ conn.connect()
 app.get('/api/stats/:variable', async (req, res) => {
     const variable = req.params.variable
     data = await getSummary(variable, conn)
-    console.log(`👨‍🌾 => `, 'data', data)
     res.send(data)
 })
 
