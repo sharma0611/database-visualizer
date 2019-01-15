@@ -9,6 +9,7 @@ import Paper from '@material-ui/core/Paper'
 import { padding } from '../Theme'
 import { Box, Heading } from 'rebass'
 import LoadingSpinner from './LoadingSpinner'
+import Error from './Error'
 
 const SummaryTable = props => {
     const { readableVariable: variable, rows, isLoading, hasErrored } = props
@@ -31,9 +32,7 @@ const SummaryTable = props => {
     if (hasErrored) {
         return (
             <Box>
-                <Heading fontSize={[6]} textAlign="center" p={padding.large} color="blue.1">
-                    An error has been encountered. Please try again.
-                </Heading>
+                <Error />
             </Box>
         )
     }

@@ -22,28 +22,28 @@ const Wrapper = styled.div`
         animation: sk-stretchdelay 1.2s infinite ease-in-out;
     }
 
+    .rect {
+        margin: 1px;
+    }
+
     .spinner .rect2 {
         -webkit-animation-delay: -1.1s;
         animation-delay: -1.1s;
-        margin: 1px;
     }
 
     .spinner .rect3 {
         -webkit-animation-delay: -1s;
         animation-delay: -1s;
-        margin: 1px;
     }
 
     .spinner .rect4 {
         -webkit-animation-delay: -0.9s;
         animation-delay: -0.9s;
-        margin: 1px;
     }
 
     .spinner .rect5 {
         -webkit-animation-delay: -0.8s;
         animation-delay: -0.8s;
-        margin: 1px;
     }
 
     @-webkit-keyframes sk-stretchdelay {
@@ -73,11 +73,11 @@ const Wrapper = styled.div`
 const LoadingSpinner = () => (
     <Wrapper>
         <div class="spinner">
-            <div class="rect1" />
-            <div class="rect2" />
-            <div class="rect3" />
-            <div class="rect4" />
-            <div class="rect5" />
+            <div class="rect rect1" />
+            <div class="rect rect2" />
+            <div class="rect rect3" />
+            <div class="rect rect4" />
+            <div class="rect rect5" />
         </div>
     </Wrapper>
 )
