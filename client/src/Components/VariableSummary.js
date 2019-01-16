@@ -28,7 +28,7 @@ const VariableSummary = (props: Props) => {
     return (
         <Page>
             {rows && <BigHeading>Summary</BigHeading>}
-            {!!omitted && omitted > 0 && <OmittedLines {...{ omitted }} />}
+            {!!omitted && omitted > 0 && !isLoading && <OmittedLines {...{ omitted }} />}
             <Flex width={1} my={4} justifyContent="center">
                 <SummaryTable {...{ rows, readableVariable, hasErrored, isLoading }} />
             </Flex>

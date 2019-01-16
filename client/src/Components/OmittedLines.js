@@ -7,7 +7,7 @@ type Props = {
 }
 
 const OmmittedLines = (props: Props) => (
-    <Text textAlign="right" p={padding.medium}>
+    <Text textAlign="center" p={padding.medium}>
         {props.omitted} lines ommitted.
     </Text>
 )

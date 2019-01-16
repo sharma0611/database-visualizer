@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react'
+import React from 'react'
 import { Flex, Box } from 'rebass'
 
 // components
@@ -16,20 +16,18 @@ type Props = {
     updateVariable: UpdateVariableType
 }
 
-class DataVisualizer extends Component<Props> {
-    render() {
-        const { variable, updateVariable, summaryData, hasErrored, isLoading } = this.props
-        return (
-            <Flex flexWrap="wrap">
-                <Box width={1}>
-                    <VariableSelector {...{ variable, updateVariable }} />
-                </Box>
-                <Box width={1} alignItems="center">
-                    <VariableSummary {...{ variable, summaryData, hasErrored, isLoading }} />
-                </Box>
-            </Flex>
-        )
-    }
+const DataVisualizer = (props: Props) => {
+    const { variable, updateVariable, summaryData, hasErrored, isLoading } = props
+    return (
+        <Flex flexWrap="wrap">
+            <Box width={1}>
+                <VariableSelector {...{ variable, updateVariable }} />
+            </Box>
+            <Box width={1} alignItems="center">
+                <VariableSummary {...{ variable, summaryData, hasErrored, isLoading }} />
+            </Box>
+        </Flex>
+    )
 }
 
 export default DataVisualizer
