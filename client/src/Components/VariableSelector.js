@@ -1,11 +1,11 @@
 // @flow
 import React, { Component } from 'react'
-import { Heading } from 'rebass'
 import { padding } from '../Theme'
 import columnData from '../Config/columnData'
-import Scroller from './Scroller'
+import HorizontalScroller from './HorizontalScroller'
 import Page from './Page'
 import VariableBox from './VariableBox'
+import BigHeading from './BigHeading'
 
 //types
 import type { Variable } from '../Types/summary'
@@ -24,10 +24,8 @@ class VariableSelector extends Component<Props> {
     render() {
         return (
             <Page>
-                <Heading fontSize={[6]} textAlign="center" p={padding.large} color="blue.1">
-                    Pick a variable
-                </Heading>
-                <Scroller>
+                <BigHeading>Pick a variable</BigHeading>
+                <HorizontalScroller p={padding.large}>
                     {columnData.map(({ colName: variable, readableName }) => {
                         const active = variable === this.props.variable
                         return (
@@ -38,7 +36,7 @@ class VariableSelector extends Component<Props> {
                             />
                         )
                     })}
-                </Scroller>
+                </HorizontalScroller>
             </Page>
         )
     }

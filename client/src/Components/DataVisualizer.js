@@ -20,11 +20,11 @@ class DataVisualizer extends Component<Props> {
     render() {
         const { variable, updateVariable, summaryData, hasErrored, isLoading } = this.props
         return (
-            <Flex bg="offwhite" flexWrap="wrap">
-                <Box width={[1, 1 / 4]}>
+            <Flex flexWrap="wrap">
+                <Box width={1}>
                     <VariableSelector {...{ variable, updateVariable }} />
                 </Box>
-                <Box width={[1, 3 / 4]}>
+                <Box width={1} alignItems="center">
                     <VariableSummary {...{ variable, summaryData, hasErrored, isLoading }} />
                 </Box>
             </Flex>

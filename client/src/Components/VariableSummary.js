@@ -1,10 +1,14 @@
 // @flow
-import React, { Component } from 'react'
-import { Box, Heading, Text } from 'rebass'
-import { padding } from '../Theme'
-import SummaryTable from './SummaryTable'
-import Scroller from './Scroller'
+import React from 'react'
+import { Flex } from 'rebass'
+
+//components
 import Page from './Page'
+import SummaryTable from './SummaryTable'
+import OmittedLines from './OmittedLines'
+import BigHeading from './BigHeading'
+
+//utils
 import { colNameToHumanFriendly } from '../Config/columnData'
 
 //types
@@ -17,32 +21,19 @@ type Props = {
     hasErrored: HasErrored
 }
 
-class VariableSummary extends Component<Props> {
-    render() {
-        const { summaryData, variable, hasErrored, isLoading } = this.props
-        const { data: rows, omitted } = summaryData
-        const readableVariable = colNameToHumanFriendly(variable)
-        return (
-            <Page>
-                <Heading fontSize={[6]} textAlign="center" p={padding.large} color="blue.1">
-                    Summary
-                </Heading>
-                <Scroller>
-                    {!!omitted && omitted > 0 && (
-                        <Text textAlign="right" p={padding.medium}>
-                            {omitted} lines ommitted.
-                        </Text>
-                    )}
-
-                    {readableVariable && rows && rows.length > 0 && (
-                        <Box mx={5} my={4}>
-                            <SummaryTable {...{ rows, readableVariable, hasErrored, isLoading }} />
-                        </Box>
-                    )}
-                </Scroller>
-            </Page>
-        )
-    }
+const VariableSummary = (props: Props) => {
+    const { summaryData, variable, hasErrored, isLoading } = props
+    const { data: rows, omitted } = summaryData
+    const readableVariable = colNameToHumanFriendly(variable)
+    return (
+        <Page>
+            {rows && <BigHeading>Summary</BigHeading>}
+            {!!omitted && omitted > 0 && <OmittedLines {...{ omitted }} />}
+            <Flex width={1} my={4} justifyContent="center">
+                <SummaryTable {...{ rows, readableVariable, hasErrored, isLoading }} />
+            </Flex>
+        </Page>
+    )
 }
 
 export default VariableSummary

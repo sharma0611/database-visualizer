@@ -1,44 +1,42 @@
 // @flow
 import React from 'react'
+
+//components
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
-import Paper from '@material-ui/core/Paper'
-import { padding } from '../Theme'
-import { Box, Heading } from 'rebass'
+import { Box, Flex } from 'rebass'
 import LoadingSpinner from './LoadingSpinner'
 import Error from './Error'
+import FlexPaper from './FlexPaper'
 
 // types
 import type { SummaryRow, IsLoading, HasErrored } from '../Types/summary'
 
 type Props = {
-    readableVariable: string,
-    rows: Array<SummaryRow>,
+    readableVariable: ?string,
+    rows: ?Array<SummaryRow>,
     isLoading: IsLoading,
     hasErrored: HasErrored
 }
 
 const SummaryTable = (props: Props) => {
     const { readableVariable: variable, rows, isLoading, hasErrored } = props
+
     if (!variable) {
-        return (
-            <Box>
-                <Heading fontSize={[6]} textAlign="center" p={padding.large} color="blue.1">
-                    No Variable Selected
-                </Heading>
-            </Box>
-        )
+        return null
     }
+
     if (isLoading) {
         return (
-            <Box>
+            <Flex justifyContent="center">
                 <LoadingSpinner />
-            </Box>
+            </Flex>
         )
     }
+
     if (hasErrored) {
         return (
             <Box>
@@ -46,8 +44,13 @@ const SummaryTable = (props: Props) => {
             </Box>
         )
     }
+
+    if (!rows) {
+        return null
+    }
+
     return (
-        <Paper>
+        <FlexPaper>
             <Table>
                 <TableHead>
                     <TableRow>
@@ -68,7 +71,7 @@ const SummaryTable = (props: Props) => {
                     ))}
                 </TableBody>
             </Table>
-        </Paper>
+        </FlexPaper>
     )
 }
 
